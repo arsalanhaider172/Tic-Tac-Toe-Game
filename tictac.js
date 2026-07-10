@@ -70,5 +70,18 @@ const checkwinner = () => {
             }
         }
     }
+    let isDraw = true;
+
+    button.forEach((btn) => {
+        if (btn.innerText === "") {
+            isDraw = false;
+        }
+    });
+
+    if (isDraw) {
+        msg.innerText = "It's a Draw!";
+        msgcontainer.classList.remove("hide");
+        disableButtons();
+    }
 };
 reset.addEventListener("click", resetgame);
