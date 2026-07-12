@@ -65,20 +65,20 @@ const checkwinner = () => {
         let pos3val = button[pattern[2]].innerText;
         if (pos1val !== "" && pos2val !== "" && pos3val !== "") {
             if (pos1val === pos2val && pos2val === pos3val) {
+                let isDraw = true;
                 console.log("winner", pos1val);
                 showwinner(pos1val);
             }
         }
     }
-    let isDraw = true;
+    
 
     button.forEach((btn) => {
         if (btn.innerText === "") {
             isDraw = false;
         }
-    });
-
-    if (isDraw) {
+    })
+    if (isDraw===true) {
         msg.innerText = "It's a Draw!";
         msgcontainer.classList.remove("hide");
         disableButtons();
